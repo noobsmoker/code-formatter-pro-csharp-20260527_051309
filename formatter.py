@@ -7,10 +7,7 @@ VERSION = "1.0.0"
 def format_code(content, language='python'):
     if language == 'python':
         content = re.sub(r'\s+$', '', content, flags=re.MULTILINE)
-        content = re.sub(r'
-{3,}', '
-
-', content)
+        content = re.sub(r'\n{3,}', '\n\n', content)
     return content.strip()
 
 def main():
